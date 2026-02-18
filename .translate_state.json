@@ -1,0 +1,24 @@
+{
+  "completed": [
+    "01_TUTORIAL\\00_index.md",
+    "01_TUTORIAL\\01_interpreter.md",
+    "01_TUTORIAL\\02_introduction.md",
+    "01_TUTORIAL\\03_controlflow.md",
+    "01_TUTORIAL\\04_datastructures.md",
+    "01_TUTORIAL\\05_modules.md",
+    "01_TUTORIAL\\06_inputoutput.md",
+    "01_TUTORIAL\\07_errors.md",
+    "01_TUTORIAL\\08_classes.md",
+    "01_TUTORIAL\\09_stdlib.md",
+    "01_TUTORIAL\\10_stdlib2.md",
+    "01_TUTORIAL\\11_venv.md",
+    "01_TUTORIAL\\12_interactive.md",
+    "01_TUTORIAL\\13_floatingpoint.md",
+    "01_TUTORIAL\\14_appendix.md",
+    "01_TUTORIAL\\appendix.md",
+    "01_TUTORIAL\\appetite.md",
+    "01_TUTORIAL\\classes.md",
+    "01_TUTORIAL\\controlflow.md",
+    "01_TUTORIAL\\datastructures.md"
+  ]
+}

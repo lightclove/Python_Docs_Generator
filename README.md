@@ -31,6 +31,10 @@
 - Интеграция fetch/translate/batch (одинаковые наборы MD)
 - Полнота перевода (файлы с низкой долей кириллицы)
 
+### Тесты
+- `pytest tests/` — unit-тесты для fetch_python_docs
+- `pytest tests/manual/verify_python_docs_inconsistencies.py -v` — проверки цепочки
+
 ## Структура
 
 ```
@@ -45,6 +49,7 @@
 ├── .fetch_state.json     # Состояние загрузки (возобновление)
 ├── .translate_state.json # Состояние перевода
 ├── fetch_python_docs.log # Лог загрузки
+├── tests/                # Unit и интеграционные тесты
 ├── 01_TUTORIAL/          # Учебник
 ├── 02_LIBRARY/           # Стандартная библиотека
 ├── 03_LANGUAGE_REFERENCE/# Справочник по языку
@@ -72,8 +77,34 @@ pip install -r requirements.txt
 |----------|---------|
 | **Полный цикл** (загрузка + перевод + PDF) | `.\run.ps1` |
 | Один файл MD -> PDF | `python md_to_pdf.py input.md output.pdf` |
+| Проверка нестыковок и полноты перевода | `python tests/manual/verify_python_docs_inconsistencies.py` |
+| Unit-тесты fetch | `pytest tests/ -v` |
+| Тесты цепочки fetch→translate→batch | `pytest tests/manual/verify_python_docs_inconsistencies.py -v` |
 | Сбросить состояние загрузки | Удалить `.fetch_state.json` |
 | Сбросить состояние перевода | Удалить `.translate_state.json` |
+
+## Разделы
+
+### 01_TUTORIAL — Учебник
+- Использование интерпретатора
+- Неформальное введение
+- Управление потоком, структуры данных
+- Модули, ввод-вывод, исключения
+- Классы, стандартная библиотека
+- Виртуальные окружения
+
+### 02_LIBRARY — Стандартная библиотека
+- Встроенные функции и типы
+- Обработка текста, типы данных
+- Файлы, сохранение данных
+- Параллельное выполнение, сеть
+- Инструменты разработки
+
+### 03_LANGUAGE_REFERENCE — Справочник по языку
+- Лексический анализ
+- Модель данных и выполнения
+- Система импорта
+- Выражения и операторы
 
 ## Источник
 
