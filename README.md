@@ -1,5 +1,5 @@
 # Python_Docs_Generator
-Автоматизированный перевод официальной документации Python с https://docs.python.org/3/, организованной по разделам сайта в md и pdf формате
+Автоматизированный перевод официальной документации Python с https://docs.python.org/3/, организованной по разделам сайта в md и pdf формате через deep translate
 Планирую сделать из этого материала датасет для обучения LLM по этой документации в будущем. 
 # Документация Python 3.14 на русском
 
@@ -8,29 +8,28 @@
 ## Структура
 
 ```
-Python_Docs_Generator/
+00_PYTHON/  (или Python_Docs_Generator/)
 ├── README.md
 ├── requirements.txt
-├── run_fetch.ps1         # Загрузка с docs.python.org
-├── run_translation.ps1   # Перевод EN -> RU (в отдельном окне)
-├── run_batch_pdf.ps1     # Конвертация MD -> PDF
-├── scripts/
-│   ├── fetch_python_docs.py   # Загрузка документации
-│   ├── translate_python_docs.py  # Перевод на русский
-│   ├── md_to_pdf.py            # Один MD -> PDF
-│   └── batch_md_to_pdf.py     # Все MD -> PDF
-├── 01_TUTORIAL/          # Учебник Python (The Python Tutorial)
-│   ├── 00_index.md
-│   ├── ...
-│   └── 14_appendix.md
+├── run.ps1                    # Полный цикл: загрузка + перевод + PDF
+├── fetch_python_docs.py   # Загрузка документации
+├── translate_python_docs.py  # Перевод на русский
+├── md_to_pdf.py            # Один MD -> PDF
+├── batch_md_to_pdf.py     # Все MD -> PDF
+├── .fetch_state.json     # Состояние загрузки (возобновление)
+├── fetch_python_docs.log # Лог загрузки
+├── 01_TUTORIAL/          # Учебник
 ├── 02_LIBRARY/           # Стандартная библиотека
-│   ├── 00_intro.md
-│   ├── ...
-│   └── 14_python.md
-└── 03_LANGUAGE_REFERENCE/ # Справочник по языку
-    ├── 00_intro.md
-    ├── ...
-    └── 08_toplevel.md
+├── 03_LANGUAGE_REFERENCE/# Справочник по языку
+├── 04_WHATSNEW/          # Что нового
+├── 05_USING/             # Установка и использование
+├── 06_HOWTO/             # Руководства HOWTO
+├── 07_INSTALLING/        # Установка модулей
+├── 08_DISTRIBUTING/      # Распространение модулей
+├── 09_EXTENDING/         # Расширение и встраивание
+├── 10_CAPI/              # C API
+├── 11_FAQ/               # Частые вопросы
+└── ...
 ```
 # Установка
 
@@ -40,35 +39,14 @@ pip install -r requirements.txt
 ```
 ## Команды
 
-| Действие | PowerShell | Python |
-|----------|------------|--------|
-| Загрузить MD с docs.python.org | `.\run_fetch.ps1` | `python scripts/fetch_python_docs.py` |
-| Перевести EN -> RU (в отдельном окне) | `.\run_translation.ps1` | `python scripts/translate_python_docs.py` |
-| Конвертировать все MD в PDF | `.\run_batch_pdf.ps1` | `python scripts/batch_md_to_pdf.py` |
-| Один файл MD -> PDF | — | `python scripts/md_to_pdf.py input.md output.pdf` |
+| Действие | Команда |
+|----------|---------|
+| **Полный цикл** (загрузка + перевод + PDF) | `.\run.ps1` |
+| Один файл MD -> PDF | `python scripts/md_to_pdf.py input.md output.pdf` |
+| Проверка нестыковок и полноты перевода | `python tests/manual/verify_python_docs_inconsistencies.py` |
+| Сбросить состояние загрузки | Удалить `.fetch_state.json` |
+| Сбросить состояние перевода | Удалить `.translate_state.json` |
 
-## Разделы
-
-### 01_TUTORIAL — Учебник
-- Использование интерпретатора
-- Неформальное введение
-- Управление потоком, структуры данных
-- Модули, ввод-вывод, исключения
-- Классы, стандартная библиотека
-- Виртуальные окружения
-
-### 02_LIBRARY — Стандартная библиотека
-- Встроенные функции и типы
-- Обработка текста, типы данных
-- Файлы, сохранение данных
-- Параллельное выполнение, сеть
-- Инструменты разработки
-
-### 03_LANGUAGE_REFERENCE — Справочник по языку
-- Лексический анализ
-- Модель данных и выполнения
-- Система импорта
-- Выражения и операторы
 
 ## Источник
 
