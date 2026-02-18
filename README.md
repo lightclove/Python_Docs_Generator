@@ -31,10 +31,6 @@
 - Интеграция fetch/translate/batch (одинаковые наборы MD)
 - Полнота перевода (файлы с низкой долей кириллицы)
 
-### Тесты
-- `pytest tests/` — unit-тесты для fetch_python_docs
-- `pytest tests/manual/verify_python_docs_inconsistencies.py -v` — проверки цепочки
-
 ## Структура
 
 ```
@@ -87,4 +83,5 @@ pip install -r requirements.txt
 Все материалы с [https://docs.python.org/3/](https://docs.python.org/3/)
 
 © Python Software Foundation. Лицензия: PSF License Version 2, Zero Clause BSD для примеров.
+
 
