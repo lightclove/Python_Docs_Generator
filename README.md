@@ -2,8 +2,6 @@
 
 Полная документация Python с [docs.python.org](https://docs.python.org/3/), организованная по разделам сайта.
 
-**Самодостаточный проект** — можно скопировать папку в `C:\Users\idv\Work\Python_Docs_Generator` и использовать отдельно.
-
 ## Возможности
 
 ### Загрузка (`fetch_python_docs.py`)
@@ -83,5 +81,6 @@ pip install -r requirements.txt
 Все материалы с [https://docs.python.org/3/](https://docs.python.org/3/)
 
 © Python Software Foundation. Лицензия: PSF License Version 2, Zero Clause BSD для примеров.
+
 
 
